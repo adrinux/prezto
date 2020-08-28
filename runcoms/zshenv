@@ -9,3 +9,38 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# Linux specific
+if [[ $(uname) == 'Linux' ]]; then
+
+  path=(
+    /opt
+    $path
+  )
+
+  # Add gopath but not on Red
+  if [[ $(hostname) != 'red' ]]; then
+    export GOPATH=/home/adrian/Admin/go
+    path=(
+      /usr/local/go/bin
+      $path
+    )
+  fi
+
+  # Add gobin but not on Red
+  if [[ $(hostname) != 'red' ]]; then
+    export GOBIN=/home/adrian/Admin/go/bin
+    path=(
+      /home/adrian/Admin/go/bin
+      $path
+    )
+  fi
+
+  # Add Rust cargo path
+  path=(
+    /home/adrian/.cargo/bin/cargo-deb
+    $path
+  )
+
+fi
+

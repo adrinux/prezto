@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -11,3 +18,30 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# My alias'
+alias h="cd ~"
+alias reload!='. ~/.zshrc'
+
+# Switch to root shell whilst keeping my zsh environment
+alias rudo='sudo -E zsh'
+
+# Pipe public key to clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# Update packages on Ubuntu/Linux
+alias update="sudo apt update"
+alias upgrade="sudo apt dist-upgrade"
+
+# Open Onivim2 editor
+alias oni="Onivim2.AppImage"
+
+# Open a file manager on Linux
+# if is linux
+if [[ $(uname) == 'Linux' ]]; then
+  alias open="xdg-open"
+fi
+
