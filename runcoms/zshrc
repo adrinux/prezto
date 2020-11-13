@@ -30,7 +30,7 @@ alias reload!='. ~/.zshrc'
 alias rudo='sudo -E zsh'
 
 # Pipe public key to clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="xclip -sel clip < ~/.ssh/id_rsa.pub | echo '=> Public key copied to pasteboard.'"
 
 # Update packages on Ubuntu/Linux
 alias update="sudo apt update"
