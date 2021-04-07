@@ -77,5 +77,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/.npm-global/bin:$PATH"
 
+# For Flutter
+export CHROME_EXECUTABLE=/opt/google/chrome/chrome
 export PATH="$HOME/Admin/flutter/bin:$PATH"
 
