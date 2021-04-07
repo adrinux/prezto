@@ -77,3 +77,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/.npm-global/bin:$PATH"
 
+export PATH="$HOME/Admin/flutter/bin:$PATH"
+
